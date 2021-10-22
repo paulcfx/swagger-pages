@@ -55,7 +55,7 @@ paths:
       summary:
         Token endpoint
       security: 
-        - oauth2
+        - oauth2: []
       responses:
         201:
           content:
