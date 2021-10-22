@@ -30,7 +30,8 @@ components:
       flows:
         authorizationCode:
           authorizationUrl: /as/authorization.oauth2
-          tokenUrl: /authorize-endpoint
+          tokenUrl: /oauth/authorize-endpoint
+          scopes: {}
     jwt:
       type: http
       scheme: bearer
@@ -52,7 +53,7 @@ paths:
       tags:
         - "Auth and security"
       summary:
-        Authorization endpoint
+        Token endpoint
       security: []
       responses:
         201:
