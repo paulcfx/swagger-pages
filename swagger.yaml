@@ -31,9 +31,6 @@ components:
         authorizationCode:
           authorizationUrl: /as/authorization.oauth2
           tokenUrl: /authorize-endpoint
-             refreshUrl: /api/v1/oauth/token/
-            # scopes:
-            #   "read": "Read-only access to all user data"
     jwt:
       type: http
       scheme: bearer
