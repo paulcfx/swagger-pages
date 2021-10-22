@@ -11,10 +11,6 @@ info:
   title: "Sample API"
 
 servers:
-  - url: https://demo.funkwhale.audio
-    description: Demo server
-  - url: https://open.audio
-    description: Real server with real content
   - url: https://{domain}
     description: Custom server
     variables:
@@ -23,7 +19,6 @@ servers:
         description: Your Funkwhale Domain
       protocol:
         enum:
-          - 'http'
           - 'https'
         default: 'https'
 
@@ -81,11 +76,11 @@ tags:
 
 paths:
   /authorize/abc:
-    post:
+    GET:
       tags:
         - "Auth and security"
       summary:
-        Register an OAuth application
+        Authorization endpoint
       security: []
       responses:
         201:
