@@ -30,7 +30,7 @@ components:
       flows:
         authorizationCode:
           authorizationUrl: /as/authorization.oauth2
-          tokenUrl: /oauth/authorize-endpoint
+          tokenUrl: http://localhost:3000/token
           scopes: {}
     jwt:
       type: http

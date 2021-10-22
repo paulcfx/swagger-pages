@@ -4,11 +4,11 @@ const app = express();
 
 
 app.get('/as/authorization.oauth2',(req,res) => {
-    const {redirect_uri, client_id} = req.query
+    const {redirect_uri, client_id, state} = req.query
 
     console.log('query',req.query)
     console.log('calling:', redirect_uri)
-    res.redirect(`${redirect_uri}?code=${client_id}`);
+    res.redirect(`${redirect_uri}?code=${client_id}&state=${state}`);
     
 })
 
