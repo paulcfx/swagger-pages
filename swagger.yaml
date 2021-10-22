@@ -15,7 +15,7 @@ servers:
     description: Custom server
     variables:
       domain:
-        default: yourdomain
+        default: authorization-server.com
         description: Your Funkwhale Domain
       protocol:
         enum:
