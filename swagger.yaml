@@ -4,7 +4,7 @@ info:
     OAuth Authentication
     --------------------
       
-    You can register your own OAuth app using the `/api/v1/oauth/apps/` endpoint. Proceed to the standard OAuth flow afterwards:
+    Sample swagger page that demonstrates oAuth dance.
       
 
   version: "0.0.1"
