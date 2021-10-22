@@ -50,10 +50,10 @@
           SwaggerUIBundle.plugins.DownloadUrl
         ],
         layout: "StandaloneLayout",
-        oauth2RedirectUrl: "www.wp.pl"
+        oauth2RedirectUrl: '/authorize-endpoint'
       });
 
-      
+
 
   ui.initOAuth({
 
@@ -61,10 +61,10 @@
     clientSecret: "your-client-secret-if-required",
     realm: "your-realms",
     appName: "your-app-name",
-    scopeSeparator: " ",
-    scopes: "openid profile",
-    additionalQueryStringParams: {test: "hello"},
-    usePkceWithAuthorizationCodeGrant: true
+    //scopeSeparator: " ",
+    //scopes: "openid profile",
+    additionalQueryStringParams: {state: "hello"},
+    usePkceWithAuthorizationCodeGrant: false
   })
       window.ui = ui;
     };

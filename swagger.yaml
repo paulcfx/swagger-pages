@@ -75,7 +75,7 @@ tags:
 
 
 paths:
-  /authorize/abc:
+  /authorize-endpoint:
     get:
       tags:
         - "Auth and security"
