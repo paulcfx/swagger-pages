@@ -29,36 +29,11 @@ components:
       description: This API uses OAuth 2 with the Authorization Code flow. You can register an app using the /oauth/apps/ endpoint.
       flows:
         authorizationCode:
-          authorizationUrl: /authorize
-          tokenUrl: /api/v1/oauth/token/
+          authorizationUrl: /as/authorization.oauth2
+          tokenUrl: /authorize-endpoint
           refreshUrl: /api/v1/oauth/token/
           scopes:
             "read": "Read-only access to all user data"
-            "write": "Write-only access on all user data"
-            "read:edits": "Read-only access to edits"
-            "write:edits": "Write-only access to edits"
-            "read:favorites": "Read-only access to favorites"
-            "write:favorites": "Write-only access to favorits"
-            "read:filters": "Read-only to to content filters"
-            "write:filters": "Write-only access to content-filters"
-            "read:follows": "Read-only to follows"
-            "write:follows": "Write-only access to follows"
-            "read:libraries": "Read-only access to library and uploads"
-            "write:libraries": "Write-only access to libraries"
-            "read:listenings": "Read-only access to listening history"
-            "write:listenings": "Write-only access to listening history"
-            "read:notifications": "Read-only access to notifications"
-            "write:notifications": "Write-only access to notifications"
-            "read:playlists": "Read-only access to playlists"
-            "write:playlists": "Write-only access to playlists"
-            "read:profile": "Read-only access to profile data"
-            "write:profile": "Write-only access to profile data"
-            "read:radios": "Read-only access to radios"
-            "write:radios": "Write-only access to radios"
-            "read:reports": "Read-only access to reports"
-            "write:reports": "Write-only access to reports"
-            "read:security": "Read-only access security settings"
-            "write:security": "write-only access security settings"
     jwt:
       type: http
       scheme: bearer
