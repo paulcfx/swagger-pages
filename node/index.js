@@ -18,11 +18,14 @@ app.post('/token', cors(), (req,res) => {
         "token_type":"bearer"});
 })
 
-app.options('/authorize-endpoint', cors());
+app.options('/secure-endpoint', cors());
 
-app.post('/authorize-endpoint',cors(),(req,res) => {
-    console.log(req);
-    res.send('done')
+app.post('/secure-endpoint',cors(),(req,res) => {
+    const {authorization} = req.headers;
+    if(!authorization){
+        res.status(403).send('Unauthorized request')
+    }
+    res.send(`Authorized: token -- ${authorization}`)
 })
 
 app.get('*',(req,res) => {

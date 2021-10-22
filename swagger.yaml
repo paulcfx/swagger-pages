@@ -32,11 +32,11 @@ components:
           authorizationUrl: /as/authorization.oauth2
           tokenUrl: http://localhost:3000/token
           scopes: {}
-    jwt:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-      description: "You can get a token by using the /token endpoint"
+    # jwt:
+    #   type: http
+    #   scheme: bearer
+    #   bearerFormat: JWT
+    #   description: "You can get a token by using the /token endpoint"
 
 security:
   - jwt: []
