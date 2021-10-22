@@ -48,22 +48,27 @@ tags:
 
 
 paths:
-  /authorize-endpoint:
+  /token:
+    get:
+      tags:
+        - "Auth and security"
+      summary:
+        Request an OAuth bearer token in exchange of an authorization_code.
+      security: []
+      responses:
+        200:
+  /secure-endpoint:
     post:
       tags:
         - "Auth and security"
       summary:
-        Token endpoint
+        Super secure end-point
       security: 
         - oauth2: []
       responses:
         201:
           content:
             application/json:
-              schema:
-                allOf:
-                  - $ref: "./api/definitions.yml#/OAuthApplication"
-                  - $ref: "./api/definitions.yml#/OAuthApplicationCreation"
       requestBody:
         required: true
         content:
@@ -73,26 +78,13 @@ paths:
               properties:
                 name:
                   type: "string"
-                  example: "My Awesome Funkwhale Client"
+                  example: "some random string"
                   summary: "A human readable name for your app"
                 redirect_uris:
                   type: "string"
-                  example: "https://myapp/oauth2/funkwhale"
+                  example: "where to redirect?"
                   summary: "A list of redirect uris, separated by spaces"
-                scopes:
-                  type: "string"
-                  summary: "A list of scopes requested by your app, separated by spaces"
-                  example: "read write:playlists write:favorites"
-  /api/v1/oauth/token/:
-    post:
-      tags:
-        - "Auth and security"
-      summary:
-        Request an OAuth bearer token in exchange of an authorization_code or a refresh_token
-      security: []
-      responses:
-        200:
-
+  
 responses:
   200:
     description: Success
