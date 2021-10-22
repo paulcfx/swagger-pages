@@ -15,11 +15,10 @@ servers:
     description: Custom server
     variables:
       domain:
-        default: authorization-server.com
+        default: localhost:3000
         description: Your Funkwhale Domain
       protocol:
         enum:
-          - 'https'
           - 'http'
         default: 'http'
 
