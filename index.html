@@ -49,11 +49,14 @@
         plugins: [
           SwaggerUIBundle.plugins.DownloadUrl
         ],
-        layout: "StandaloneLayout"
+        layout: "StandaloneLayout",
+        oauth2RedirectUrl: "www.wp.pl"
       });
 
-      
+      https://yourdomain/authorize?response_type=code&client_id=your-client-id&redirect_uri=https%3A%2F%2Fpaulcfx.github.io%2Foauth2-redirect.html&scope=openid%20profile&state=VGh1IE9jdCAyMSAyMDIxIDIwOjE2OjM2IEdNVC0wNDAwIChFYXN0ZXJuIERheWxpZ2h0IFRpbWUp&realm=your-realms&code_challenge=HkxrdRNs16ooWPa0pmJavijXiqAT5Edu71BLI3en1gg&code_challenge_method=S256&test=hello
+
   ui.initOAuth({
+
     clientId: "your-client-id",
     clientSecret: "your-client-secret-if-required",
     realm: "your-realms",
