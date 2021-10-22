@@ -50,7 +50,8 @@
           SwaggerUIBundle.plugins.DownloadUrl
         ],
         layout: "StandaloneLayout",
-        oauth2RedirectUrl: '/authorize-endpoint'
+        //this needs to be the url to the api gateway endpoint that will read the code out of query string
+        oauth2RedirectUrl: 'ttps://www.oauth.com/playground/authorization-code.html'
       });
 
 
