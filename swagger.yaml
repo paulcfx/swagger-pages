@@ -21,7 +21,7 @@ servers:
         enum:
           - 'https'
           - 'http'
-        default: 'https'
+        default: 'http'
 
 components:
   securitySchemes:

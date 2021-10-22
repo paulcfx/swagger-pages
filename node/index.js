@@ -3,9 +3,11 @@ const express = require('express');
 const app = express();
 
 
-app.get('/authorize',(req,res) => {
-    console.log('request',req),
-    res.sendStatus(200);
+app.get('/as/authorization.oauth2',(req,res) => {
+    const {redirect_uri, client_id} = req.query
+    console.log('calling:', redirect_uri)
+    res.redirect(redirect_uri);
+    
 })
 
 app.get('*',(req,res) => {
