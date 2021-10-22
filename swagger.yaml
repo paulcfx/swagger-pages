@@ -76,7 +76,7 @@ tags:
 
 paths:
   /authorize/abc:
-    get:
+    get :
       tags:
         - "Auth and security"
       summary:
