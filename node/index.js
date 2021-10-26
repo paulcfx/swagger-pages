@@ -3,9 +3,11 @@ const app = express();
 cors = require('cors')
 
 app.get('/as/authorization.oauth2',(req,res) => {
+
+    console.log('--- calling re direct')
     const {redirect_uri, client_id, state} = req.query
     console.log('query',req.query)
-    console.log('calling:', redirect_uri)
+    console.log('passing:', `${redirect_uri}?code=${client_id}&state=${state}`)
     res.redirect(`${redirect_uri}?code=${client_id}&state=${state}`);
     
 })

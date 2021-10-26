@@ -18,6 +18,8 @@
             qp = location.search.substring(1);
         }
 
+        console.log('the hash:',window.location.hash)
+
         arr = qp.split("&");
         arr.forEach(function (v,i,_arr) { _arr[i] = '"' + v.replace('=', '":"') + '"';});
         qp = qp ? JSON.parse('{' + arr.join() + '}',
@@ -64,6 +66,9 @@
         } else {
             oauth2.callback({auth: oauth2.auth, token: qp, isValid: isValid, redirectUrl: redirectUrl});
         }
+
+        console.log('dump:',oauth2)
+
         window.close();
     }
 
