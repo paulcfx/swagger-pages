@@ -18,7 +18,7 @@
             qp = location.search.substring(1);
         }
 
-        alert('the hash:',window.location.hash)
+        alert(`the hash: ${qp}`);
 
         arr = qp.split("&");
         arr.forEach(function (v,i,_arr) { _arr[i] = '"' + v.replace('=', '":"') + '"';});
@@ -47,6 +47,7 @@
             if (qp.code) {
                 delete oauth2.state;
                 oauth2.auth.code = qp.code;
+                alert(`calling: ${redirectUrl} --  ${oauth2.auth}`)
                 oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});
             } else {
                 let oauthErrorMsg;
