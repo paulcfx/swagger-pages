@@ -47,7 +47,7 @@
             if (qp.code) {
                 delete oauth2.state;
                 oauth2.auth.code = qp.code;
-                alert(`calling: ${redirectUrl} --  ${oauth2.auth}`)
+                alert(`calling: ${redirectUrl} --  ${JSON.stringify(oauth2.auth, null, 2)}`)
                 oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});
             } else {
                 let oauthErrorMsg;
