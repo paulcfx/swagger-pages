@@ -48,8 +48,8 @@ tags:
 
 
 paths:
-  /token:
-    get:
+  /token/:
+    post:
       tags:
         - "Auth and security"
       summary:
