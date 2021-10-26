@@ -18,7 +18,7 @@
             qp = location.search.substring(1);
         }
 
-        alert(`the hash: ${qp}`);
+        console.log(`the hash: ${qp}`);
 
         arr = qp.split("&");
         arr.forEach(function (v,i,_arr) { _arr[i] = '"' + v.replace('=', '":"') + '"';});
@@ -47,8 +47,8 @@
             if (qp.code) {
                 delete oauth2.state;
                 oauth2.auth.code = qp.code;
-                alert(`calling: ${redirectUrl} --  ${JSON.stringify(oauth2.auth, null, 2)}`)
-                oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});
+                console.log(`calling: ${redirectUrl} --  ${JSON.stringify(oauth2.auth, null, 2)}`)
+                oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});s
             } else {
                 let oauthErrorMsg;
                 if (qp.error) {
@@ -68,7 +68,7 @@
             oauth2.callback({auth: oauth2.auth, token: qp, isValid: isValid, redirectUrl: redirectUrl});
         }
 
-        alert('dump:',oauth2)
+        console.log('dump:',oauth2)
 
         window.close();
     }
