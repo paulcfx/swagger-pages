@@ -16,7 +16,7 @@ servers:
     variables:
       domain:
         default: localhost:3000
-        description: Your Funkwhale Domain
+        description: Sample website
       protocol:
         enum:
           - 'http'
@@ -30,7 +30,7 @@ components:
       flows:
         authorizationCode:
           authorizationUrl: /as/authorization.oauth2
-          tokenUrl: http://localhost:3000/token
+          tokenUrl: https://t61wfaguc5.execute-api.us-east-2.amazonaws.com/default/token
           scopes: {}
     # jwt:
     #   type: http
