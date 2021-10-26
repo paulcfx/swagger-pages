@@ -14,7 +14,7 @@ app.get('/as/authorization.oauth2',(req,res) => {
 app.options('/token/', cors());
 
 app.post('/token', cors(), (req,res) => {
-    console.log('done?', req.query)
+    console.log('done?', req);
     res.send({
         "access_token":"2YotnFZFEjr1zCsicMWpAA",
         "token_type":"bearer"});
