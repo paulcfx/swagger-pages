@@ -47,8 +47,7 @@
             if (qp.code) {
                 delete oauth2.state;
                 oauth2.auth.code = qp.code;
-                console.log(`calling: ${redirectUrl} --  ${JSON.stringify(oauth2.auth, null, 2)}`)
-                oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});s
+                oauth2.callback({auth: oauth2.auth, redirectUrl: redirectUrl});
             } else {
                 let oauthErrorMsg;
                 if (qp.error) {
@@ -67,8 +66,6 @@
         } else {
             oauth2.callback({auth: oauth2.auth, token: qp, isValid: isValid, redirectUrl: redirectUrl});
         }
-
-        console.log('dump:',oauth2)
 
         window.close();
     }
