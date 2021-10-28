@@ -33,7 +33,6 @@ variable "swagger_user_api_template" {
   type = string
 }
 
-
 locals {
   env                    = terraform.workspace != "prod" ? "-${terraform.workspace}" : ""
   user_api_name          = "user-api${local.env}"
