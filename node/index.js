@@ -1,14 +1,57 @@
 const express = require('express');
 const app = express();
 cors = require('cors')
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3();
+
+
+app.get('/test-endpoint',(req,res) => {
+    try{
+        res.setHeader('Content-Type', 'application/json');
+        res.write('sending content...')
+        
+        const f = s3.getObject({
+            Bucket: 'ae-k8s-tf',
+            Key: 'largeFile6m.txt'
+        }).createReadStream();
+        
+        
+        
+        f.on("data", (chunk) => {
+            //console.log('chunks:',chunk.toString('base64'));
+            //r.push(chunk)
+            res.write('....\n')
+            res.write(chunk.toString('base64')+'\n')
+        }) 
+
+        f.on('end', () => {
+            console.log('done with yhe file')
+            res.end('done')
+
+        })
+
+    }catch (e) {
+        console.log('error:',e);
+        res.write('done with error');
+        
+    }finally {
+       //
+       // res.send('!')
+       //res.end()
+    }
+
+});
 
 app.get('/as/authorization.oauth2',(req,res) => {
 
-    console.log('--- calling re direct')
+    //console.log('--- calling re direct')
     const {redirect_uri, client_id, state} = req.query
-    console.log('query',req.query)
-    res.redirect(`https://t61wfaguc5.execute-api.us-east-2.amazonaws.com/default/token?code=${client_id}&state=${state}`);
+    //console.log('query',req.query)
+    //console.log('redirecting to:',redirect_uri);
+    res.redirect(`${redirect_uri}?code=${client_id}&state=${state}`)
+//    res.redirect(`https://t61wfaguc5.execute-api.us-east-2.amazonaws.com/default/token?code=${client_id}&state=${state}`);
 });
+
 
 // app.get('/token', (req,res) => {
 //     console.log('calling GET /token', req.query)
