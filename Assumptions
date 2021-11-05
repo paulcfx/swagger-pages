@@ -1,7 +1,8 @@
 Assumptions:
-16x increase in data volume by CY32. 6G networks with 1Tbps (1000x faster than your 1Giga top-of-the-line home connection in 2021). Moore's law regarding CPU speed is slowing down - meaning that compute capabilities wont keep up with the volume of data. Edge computing and distributed systems on the raise
+16x increase in data volume by CY32. 5G networks are common (up to 1.1Gps), 6G networks with 1Tbps (1000x faster than your 1Giga top-of-the-line home connection in 2021) are being introduced. Moore's law regarding CPU speed is slowing down - meaning that compute capabilities wont keep up with the volume of data. Edge computing and distributed systems on the raise
 
 As more and more data is produced and consumed there will be a need to use more sophisticated tools to determine whats actionable. Machine Learning on the rise
-ETL or ELT process becoming more selective. Data Extraction (the E in ETL) is shifting left to the edge. 
+ETL or ELT process becoming more selective. Intelligent Data Extraction (the E in ETL) is shifting left to the edge. 
 Need for smarter just-in-time processing of streaming data?
-More real-time data, including multimedia, which requires streaming capabilities.
+More real-time data (including multimedia and more fidelity/granuality data), which requires streaming capabilities.
+Interactive search is the limiting factor (inverted indexes running on top of expensive compute VMs)
